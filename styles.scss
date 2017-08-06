@@ -1,0 +1,245 @@
+//////////////////////////////
+// VARIABLES
+//////////////////////////////
+
+// COLORS
+$COLOR-GREY-LIGHTEST: #bbb;
+$COLOR-GREY-LIGHTER: #999;
+$COLOR-GREY-LIGHT: #666;
+$COLOR-GREY: #333;
+$COLOR-SILVER: #ccc;
+
+// SPACING
+$SPACING-1: 8px;
+$SPACING-2: 16px;
+$SPACING-3: 24px;
+$SPACING-4: 32px;
+$SPACING-5: 40px;
+
+
+//////////////////////////////
+// HELPERS
+//////////////////////////////
+.h-hidden {
+    display: block !important;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+
+//////////////////////////////
+// RESET
+//////////////////////////////
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/////////////////////////////////////////
+// BASE
+/////////////////////////////////////////
+* { box-sizing: border-box }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: $COLOR-GREY;
+    font-family: 'Lato';
+}
+
+a {
+    color: $COLOR-GREY;
+    text-decoration: none;
+    
+    &:hover {
+        color: $COLOR-GREY-LIGHT;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+    color: #555;
+}
+
+
+//////////////////////////////
+// SITE
+//////////////////////////////
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-width: 800px;    
+    margin: 0 auto;
+    padding: $SPACING-4 $SPACING-2;    
+}
+
+.site-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header {
+    margin-bottom: $SPACING-5;
+    font-size: 3.5em;
+    
+    h1 {
+        display: inline;
+    }
+}
+
+.site-content {
+
+}
+
+.site-footer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 72px;
+    color: $COLOR-GREY-LIGHTEST;
+    font-weight: 300;
+}
+
+
+//////////////////////////////
+// COMPONENTS
+//////////////////////////////
+.c-list {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.5;
+    
+    .c-list__item {
+        margin-bottom: $SPACING-3;
+
+        a {
+            padding-bottom: 2px;
+            border-bottom: 1px solid $COLOR-GREY-LIGHT;
+        }
+    }
+    
+    .c-list__emphasis {
+        display: block;
+    }
+}
+
+.c-last-update {
+    margin: $SPACING-5 0;
+    color: $COLOR-GREY-LIGHTER;
+    font-weight: 300;
+
+    a {
+        color: $COLOR-GREY-LIGHTER;
+        border-bottom: 1px solid $COLOR-GREY-LIGHTER;
+
+        &:hover {
+            color: $COLOR-GREY-LIGHT;
+            border-color: $COLOR-GREY-LIGHT;
+        }
+    }
+}
+
+.c-menu {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 300;
+
+    .c-menu__item {
+        padding: $SPACING-1;
+
+        a {
+            padding: 0 2px 2px 2px;
+            color: $COLOR-GREY-LIGHTEST;
+            font-size: 1.2em;
+            font-weight: 400;
+
+            &:hover {
+                border-bottom: 2px solid $COLOR-GREY-LIGHT;
+                color: $COLOR-GREY-LIGHT;
+            }
+        }
+
+    }
+   
+    .c-menu__separator {
+        margin: 0 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 10px;
+        background-color: $COLOR-GREY-LIGHTEST;
+    }
+}
+
+//////////////////////////////
+// RESPONSIVENESS
+//////////////////////////////
+@media (min-width: 480px) {
+    .site-wrapper {
+        padding: $SPACING-4;   
+    }
+    
+    .c-list {
+        .c-list__item {
+            margin-bottom: $SPACING-1;
+        }
+        
+        .c-list__emphasis {
+            display: inline;
+        }
+    }
+}
