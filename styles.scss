@@ -162,6 +162,7 @@ strong {
     
     .c-list__item {
         margin-bottom: $SPACING-3;
+        word-wrap: break-word;
 
         a {
             padding-bottom: 2px;
